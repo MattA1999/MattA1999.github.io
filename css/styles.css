@@ -1,0 +1,13 @@
+#wrapper{
+
+    background-color: tomato;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blanchedalmond;
+    padding-left: 7%;
+    padding: 3%;
+}
+
+img{
+
+    border: 5px solid blanchedalmond;
+}
