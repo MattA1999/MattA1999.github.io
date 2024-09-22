@@ -5,9 +5,23 @@
     color: blanchedalmond;
     padding-left: 7%;
     padding: 3%;
+    text-align: center;
+}
+
+#welcome{
+
+    text-align: center;
+    font-size: 200%;
+    font-style: italic;
+}
+
+ul{
+
+    list-style-type: none;
 }
 
 img{
 
     border: 5px solid blanchedalmond;
 }
+
