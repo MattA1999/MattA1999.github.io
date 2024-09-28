@@ -18,11 +18,14 @@ else if(isEvening) {
 
 //connect to div and display welcome message
 
-document.getElementById('welcome').innerHTML = welcome;
+document.getElementById('welcome').innerHTML = welcome
 
+//add a 'secret' message to the local storage using the key "It's a secret to everybody."
 
+const secretMessage = "I'm bad at Zelda games"
+const key = "It's a secret to everybody."
 
-
-
+//save to local storage
+localStorage.setItem(key, secretMessage)
 
 //alert('test')
