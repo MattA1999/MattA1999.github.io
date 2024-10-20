@@ -7,6 +7,7 @@
     </head>
     <body>
         <div id="wrapper">
+            
             <main>
                 <div id="welcome"></div> <!--welcome message display-->
                 <h1>My name is Matt.</h1>
@@ -24,8 +25,13 @@
                     <li>The John Wick Series - 2014-2023</li>
                 </ul>
             </main>
-        </div>
-        <!--Carousel-->
+            <!--to do list-->
+            <h1>My To Do List</h1>
+            <ul class="todo-list"></ul> <!--list goes here-->
+            <input type="text" id="new-todo" name="new-todo" placeholder="Add a new item">
+            <button type="button" id="add-todo" name="add-todo">Add To Do</button>
+            <br> <br>
+            <!--Carousel-->
         <div id="carousel">
             <img alt="Image 1">
             <img alt="Image 2">
@@ -35,7 +41,9 @@
             <button id="prev">Previous</button>
             <button id="next">Next</button>
         </div>
+        </div>
 
+        
         <script src=site.js></script> <!--link to js file-->
     </body>
 </html>

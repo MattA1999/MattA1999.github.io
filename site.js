@@ -81,5 +81,45 @@ document.getElementById('prev').addEventListener('click', () =>{
 })
 
 
-//alert('test')
+//start of "to do" list
+// Get the list from local storage
+const todos = JSON.parse(localStorage.getItem('todo-list')) || [];
+
+// create local variables
+const todoList = document.querySelector('.todo-list');
+const input = document.getElementById('new-todo');
+const addButton = document.getElementById('add-todo');
+
+// display todos
+const renderTodos = () => {
+    // clear the current list items
+    todoList.innerHTML = '';
+
+    // loop through the todos array and create list items
+    todos.forEach(todo => {
+        const li = document.createElement('li');  // Create a new list item
+        li.textContent = todo.text;               // Set the text of the list item
+        todoList.appendChild(li);                  // Add the item to the list
+    });
+};
+
+// add click listener to the button
+addButton.addEventListener('click', () => {
+    if (input.value.trim() !== '') {           
+        // Add a new item to the list
+        todos.push({ text: input.value, completed: false });
+
+        // Save the list to local storage
+        localStorage.setItem('todo-list', JSON.stringify(todos));
+
+    
+        input.value = '';
+
+        // Render the updated list
+        renderTodos();
+    }
+});
+
+// Call renderTodos on page load to display existing items
+renderTodos();
 
