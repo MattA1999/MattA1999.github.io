@@ -123,3 +123,48 @@ addButton.addEventListener('click', () => {
 // Call renderTodos on page load to display existing items
 renderTodos();
 
+
+
+
+//start of pokemon assignment (7)
+
+//IIFE
+;(async () => {
+    //grab parent element
+    const parentElement = document.getElementById('pokemon')
+
+    //add image to page
+    const img = document.createElement('img')
+    img.src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png"
+    img.alt = 'Clefairy'
+    parentElement.append(img)
+
+    //get random pokemon picture
+    const getRandomPokemon = async () => {
+
+        const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 151) + 1; // Random ID between 1 and 151
+
+        const newPokemon = await fetch(url) //fetch url
+
+        const json = await newPokemon.json() //parse into json
+        return json // get data
+    }
+
+    const renderPokemon = async (pokemon) => {
+
+        img.src = pokemon.sprites.front_default //use sprite url
+        img.alt = pokemon.name // pokemon name for alt text
+        parentElement.append(img) // append to page
+
+    }
+
+
+    //fetch and render random pokemon
+    getRandomPokemon().then(pokemon =>{
+        renderPokemon(pokemon)
+    })
+})()
+
+
+
+//getRandomPokemon().then(json => console.log(json))
